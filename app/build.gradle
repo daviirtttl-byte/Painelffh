@@ -1,0 +1,19 @@
+apply plugin: 'com.android.application'
+android {
+    namespace 'com.g45.ffnativo'
+    compileSdk 33
+    defaultConfig {
+        applicationId "com.g45.ffnativo"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        ndk { abiFilters 'armeabi-v7a', 'arm64-v8a' }
+    }
+    externalNativeBuild { cmake { path "src/main/cpp/CMakeLists.txt" } }
+}
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'dev.rikka.shizuku:api:13.1.5'
+    implementation 'dev.rikka.shizuku:provider:13.1.5'
+}
